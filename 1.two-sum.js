@@ -11,21 +11,16 @@
  * @return {number[]}
  */
 var twoSum = function (nums, target) {
-  //brute force approach
+  //optimized solution
   let i = 0;
-  let j = 1;
-  while (i < nums.length - 1) {
-    if (nums[i] + nums[j] === target) {
-      return [i, j];
-    } else if (i === nums.length - 2 && j === nums.length - 1) {
-      break;
+  const map = {};
+  while (i < nums.length) {
+    let complement = target - nums[i];
+    if (complement in map) {
+      return [map[complement], i];
     }
-    if (j === nums.length - 1) {
-      i++;
-      j++;
-    } else {
-      j++;
-    }
+    map[nums[i]] = i;
+    i++;
   }
 };
 // @lc code=end
