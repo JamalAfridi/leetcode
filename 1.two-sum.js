@@ -11,7 +11,7 @@
  * @return {number[]}
  */
 var twoSum = function (nums, target) {
-  //optimized solution
+  //optimized solution: Time = O(n)
   let i = 0;
   const map = {};
   while (i < nums.length) {
